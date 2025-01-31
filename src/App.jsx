@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import MainLayout from "./layouts/MainLayout";
 import ErrorPage from './pages/ErrorPage'
 import { createContext, useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 export const ThemeContext = createContext()
 
 function App() {
@@ -26,7 +27,8 @@ useEffect(()=>{
 
   return (
     <ThemeContext.Provider value={{Theme , setTheme}}>
-      <Routes>
+      <Toaster reverseOrder={false} position="top"/>
+        <Routes>
       <Route path="/" element={<MainLayout><Home></Home></MainLayout>}></Route>
       <Route path="/about" element={<MainLayout><About></About></MainLayout>}></Route>
       <Route path="/products" element={<MainLayout><Products></Products></MainLayout>}></Route>
